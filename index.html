@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install Stream Manager</title>
+
+<!--
+  This page exists to be the ONE address the Fire TV Downloader code points at.
+
+  An aftv.news code is welded to its URL forever — it cannot be edited, ever.
+  So the code must point at something we can repoint. That is this page, and it
+  is the only reason it exists.
+
+  It deliberately forwards to releases/latest/download/, NOT to a version-stamped
+  file. GitHub re-points /latest/ by itself when a release is published, so this
+  page needs no edit at release time. Hard-coding a version here would just move
+  the "someone forgot to update it" failure from the release tag to this file —
+  a page nobody looks at, on a path nothing verifies.
+
+  Edit the URL below ONLY if the download genuinely moves somewhere else.
+-->
+<meta http-equiv="refresh" content="0; url=https://github.com/magicaltoothferry/stream-manager/releases/latest/download/stream-manager.apk">
+
+<style>
+  html, body { margin: 0; padding: 0; background: #0f172a; color: #f1f5f9;
+               font-family: system-ui, -apple-system, Arial, sans-serif; }
+  /* Sized for a television read from across a room, not a phone in the hand. */
+  main { min-height: 100vh; display: flex; flex-direction: column;
+         align-items: center; justify-content: center; text-align: center;
+         padding: 6vh 5vw; box-sizing: border-box; }
+  h1   { font-size: 2.2rem; margin: 0 0 .6rem; }
+  p    { font-size: 1.15rem; color: #94a3b8; margin: 0 0 2rem; max-width: 34ch; line-height: 1.5; }
+  /* The manual escape hatch. Downloader normally follows the refresh above on
+     its own, but if it renders the page instead, this has to be hittable with a
+     d-pad — big, and visibly focused. */
+  a.btn { display: inline-block; background: #059669; color: #fff;
+          font-size: 1.5rem; font-weight: 700; text-decoration: none;
+          padding: 1.1rem 2.6rem; border-radius: 14px; border: 3px solid transparent; }
+  a.btn:focus, a.btn:hover { background: #10b981; border-color: #f1f5f9; outline: none; }
+  small { display: block; margin-top: 2.5rem; color: #475569; font-size: .8rem; word-break: break-all; }
+</style>
+</head>
+<body>
+<main>
+  <h1>📺 Stream Manager</h1>
+  <p>The download should start on its own. If it does not, press OK on the button below.</p>
+
+  <a class="btn" id="dl" autofocus
+     href="https://github.com/magicaltoothferry/stream-manager/releases/latest/download/stream-manager.apk">Download the app</a>
+
+  <small>github.com/magicaltoothferry/stream-manager</small>
+</main>
+
+<script>
+  // Belt and braces: some embedded browsers honour a script navigation where
+  // they ignore a meta refresh. Both point at the same place, so whichever
+  // fires first wins and the other is a no-op.
+  setTimeout(function () {
+    try { window.location.replace(document.getElementById('dl').href); } catch (e) {}
+  }, 400);
+</script>
+</body>
+</html>
