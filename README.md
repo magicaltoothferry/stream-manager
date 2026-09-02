@@ -13,8 +13,8 @@ It forwards to the current build. Android will say installing from this source
 is not allowed — that is normal for an app outside the Play Store. Choose
 **Settings**, turn on **Allow from this source**, go back, and tap **Install**.
 
-On Fire TV / Android TV the same page is reachable from the Downloader app,
-which takes a short numeric code instead of a URL.
+**Fire TV / Android TV** — open the **Downloader** app and enter code **8160129**,
+which is the same page. Seven digits beats forty characters on a remote.
 
 ## What is here
 
@@ -32,6 +32,9 @@ which takes a short numeric code instead of a URL.
 1. Commit `stream-manager-<version>.apk` to `main`.
 2. Publish release `v<version>` with the APK attached as `stream-manager.apk`.
 
-The landing page needs no edit — GitHub re-points `/releases/latest/` by itself.
+The landing page needs no edit — GitHub re-points `/releases/latest/` by itself,
+and the Downloader code is bound to the landing page rather than to any release.
+That binding is permanent: an AFTVnews code cannot be edited or deleted once
+minted, so nothing here may be renamed out from under it.
 
 Old versions stay. They cost nothing and they are the only rollback path.
