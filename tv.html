@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stream Manager — Samsung TV</title>
+<!-- How to install Stream Manager on a Samsung TV. A static page on GitHub Pages:
+     nothing here talks to the Stream Manager server. Windows PCs get the full
+     guide; anything else is told to open it on a Windows PC. ?lang=en English,
+     ?as=win previews the PC version. Source of the text: tv.php on the server. -->
+<style>
+  :root{--bg:#0f172a;--card:#1e293b;--line:#334155;--text:#e2e8f0;--dim:#94a3b8;--acc:#818cf8;--warn:#fcd34d}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;padding:16px}
+  main{max-width:720px;margin:0 auto}
+  header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  h1{font-size:1.6rem;margin:.4em 0}
+  a{color:var(--acc)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+  .card.hl{background:#312e81aa;border-color:#4f46e5}
+  h2{font-size:1.15rem;margin:0 0 .5em}
+  ul{margin:0;padding-inline-start:1.3em}
+  li{margin:.45em 0}
+  code{background:#0b1222;padding:2px 6px;border-radius:6px;direction:ltr;display:inline-block}
+  button{background:#475569;color:#fff;border:0;border-radius:6px;padding:2px 10px;font-size:.9em;cursor:pointer;margin-inline-start:6px}
+  .dim{color:var(--dim)} .warn{color:var(--warn)} .small{font-size:.9em}
+  .big{font-size:1.3rem;font-weight:600;direction:ltr;word-break:break-all}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+var T = {"he": {"title": "Stream Manager בטלוויזיה של סמסונג", "other": "English", "only": "אפשר להשתמש בדף הזה רק <b>במחשב Windows<\/b>.", "only2": "פתחו את הכתובת הזו במחשב Windows שמחובר לאותה רשת ביתית כמו הטלוויזיה:", "intro": "כ-15 דקות, פעם אחת לכל טלוויזיה. צריך: טלוויזיית סמסונג משנת 2017 ואילך, את המחשב הזה באותה רשת ביתית כמו הטלוויזיה, וחשבון Samsung חינמי.", "copy": "העתקה", "copied": "הועתק ✓", "steps": [["1. מציאת כתובת ה-IP של המחשב הזה", ["לחצו <b>התחל<\/b>, הקלידו <b>cmd<\/b> ולחצו Enter.", "הקלידו <code dir=\"ltr\" class=\"bg-slate-900 px-1.5 py-0.5 rounded\">ipconfig<\/code> ולחצו Enter.", "מצאו את השורה <b>IPv4 Address<\/b> (למשל 192.168.1.20) ורשמו אותה — הטלוויזיה צריכה אותה בשלב 2."]], ["2. הפעלת מצב מפתחים בטלוויזיה", ["בשלט של הטלוויזיה פתחו את <b>Apps<\/b> (אפליקציות).", "הקלידו בשלט <b>1 2 3 4 5<\/b> (אם אין בשלט מקשי מספרים — במקלדת המספרים שעל המסך). ייפתח חלון “Developer Mode”.", "העבירו את Developer Mode ל-<b>On<\/b>, ובשדה <b>Host PC IP<\/b> הקלידו את כתובת ה-IP משלב 1. בחרו OK.", "הפעילו מחדש את הטלוויזיה: החזיקו את כפתור ההפעלה בשלט עד שהיא נכבית ונדלקת שוב ומופיע הלוגו של Samsung."]], ["3. התקנת Stream Manager מהמחשב הזה", ["הורידו את תוכנת ההתקנה: <a class=\"underline text-indigo-300\" href=\"https://github.com/reisxd/TizenBrewInstaller/releases/latest/download/TizenBrewInstaller-win-x64.exe\">TizenBrew Installer ל-Windows<\/a>, והפעילו אותה. אם Windows מזהיר “Windows protected your PC”, לחצו <b>More info<\/b> ← <b>Run anyway<\/b>.", "התוכנה מוצאת את הטלוויזיה ברשת. אם היא מבקשת את ה-IP של הטלוויזיה — בטלוויזיה: הגדרות ← כללי ← רשת ← מצב רשת ← הגדרות IP.", "אם מתבקשים, התחברו עם <b>חשבון Samsung<\/b> — התוכנה יוצרת את האישור של הטלוויזיה.", "בחרו <b>Install from GitHub<\/b> (<b>לא<\/b> “Install TizenBrew”), הקלידו <code dir=\"ltr\" class=\"bg-slate-900 px-1.5 py-0.5 rounded\">magicaltoothferry/stream-manager<\/code>%COPY% ואשרו. אחרי כדקה התוכנה מציגה <b>Package installed<\/b>."]], ["4. פתיחת Stream Manager בטלוויזיה", ["בטלוויזיה פתחו <b>Apps<\/b> ובחרו <b>Stream Manager<\/b>. כדי שיהיה בהישג יד, העבירו אותו לשורת הבית (סמנו אותו ← לחיצה ארוכה על OK ← העברה)."]], ["5. כניסה", ["בטלוויזיה יופיע קוד QR. סרקו אותו במצלמת הטלפון ואשרו בטלגרם — הטלוויזיה תתחבר לבד.", "אם לחשבון עדיין לא מחובר TorBox, הטלוויזיה תציג איך לחבר אותו."]]], "remote": "בשלט בזמן צפייה: OK = השהיה · ◀ ▶ = אחורה 10 שנ׳ / קדימה 30 שנ׳ · ▲ = כתוביות (החלפה, תרגום לעברית, תזמון) · BACK = עצירה. כפתור היציאה למעלה סוגר את האפליקציה.", "trouble": "אם תוכנת ההתקנה מציגה “Could not connect to the SDB Daemon”: ה-Host PC IP בטלוויזיה אינו ה-IP של המחשב הזה, או שהטלוויזיה לא הופעלה מחדש עד הסוף (החזיקו כיבוי עד הלוגו של Samsung). אם מופיעה הודעה של חומת האש של Windows — אשרו גישה."}, "en": {"title": "Stream Manager on a Samsung TV", "other": "עברית", "only": "This page can be used only on a <b>Windows PC<\/b>.", "only2": "Open this address on a Windows computer that is on the same home network as the TV:", "intro": "About 15 minutes, once per TV. You need: a Samsung TV from 2017 or later, this PC on the same home network as the TV, and a free Samsung account.", "copy": "Copy", "copied": "Copied ✓", "steps": [["1. Find this PC’s IP address", ["Press <b>Start<\/b>, type <b>cmd<\/b> and press Enter.", "Type <code dir=\"ltr\" class=\"bg-slate-900 px-1.5 py-0.5 rounded\">ipconfig<\/code> and press Enter.", "Find the line <b>IPv4 Address<\/b> (for example 192.168.1.20) and write it down — the TV needs it in step 2."]], ["2. Turn on Developer Mode on the TV", ["With the TV remote, open <b>Apps<\/b>.", "Type <b>1 2 3 4 5<\/b> on the remote (if it has no number buttons, use the on-screen number pad). A “Developer Mode” window opens.", "Switch Developer Mode <b>On<\/b>, and in <b>Host PC IP<\/b> type the IP address from step 1. Select OK.", "Restart the TV: hold the remote’s power button until the TV turns off and on again and you see the Samsung logo."]], ["3. Install Stream Manager from this PC", ["Download the installer: <a class=\"underline text-indigo-300\" href=\"https://github.com/reisxd/TizenBrewInstaller/releases/latest/download/TizenBrewInstaller-win-x64.exe\">TizenBrew Installer for Windows<\/a>, and run it. If Windows warns “Windows protected your PC”, click <b>More info<\/b> → <b>Run anyway<\/b>.", "It finds the TV on your network. If it asks for the TV’s IP, it is on the TV under Settings → General → Network → Network Status → IP Settings.", "If asked, sign in with your <b>Samsung account<\/b> — the installer creates the TV’s certificate.", "Choose <b>Install from GitHub<\/b> (not “Install TizenBrew”), type <code dir=\"ltr\" class=\"bg-slate-900 px-1.5 py-0.5 rounded\">magicaltoothferry/stream-manager<\/code>%COPY% and confirm. After a minute the installer says <b>Package installed<\/b>."]], ["4. Open Stream Manager on the TV", ["On the TV open <b>Apps<\/b> and choose <b>Stream Manager<\/b>. To keep it handy, move it to the home row (highlight it → hold OK → Move)."]], ["5. Sign in", ["The TV shows a QR code. Scan it with your phone’s camera and confirm in Telegram — the TV signs in by itself.", "If your account has no TorBox linked yet, the TV shows how to link it."]]], "remote": "On the remote while watching: OK = pause · ◀ ▶ = back 10s / forward 30s · ▲ = subtitles (switch, translate to Hebrew, timing) · BACK = stop. The Exit button at the top closes the app.", "trouble": "If the installer shows “Could not connect to the SDB Daemon”: the TV’s Host PC IP is not this PC’s IP, or the TV was not fully restarted (hold power until the Samsung logo). If a Windows firewall prompt appears, allow access."}};
+var PAGE = 'magicaltoothferry.github.io/stream-manager/tv.html';
+var MOD = 'magicaltoothferry/stream-manager';
+var q = new URLSearchParams(location.search);
+var lang = q.get('lang') === 'en' ? 'en' : 'he';
+var L = T[lang];
+var ua = navigator.userAgent;
+var isPc = /Windows NT/i.test(ua) && !/Windows Phone|Xbox/i.test(ua) && !((navigator.maxTouchPoints || 0) > 1 && Math.min(screen.width, screen.height) < 700);
+if (q.get('as') === 'win') isPc = true;
+document.documentElement.lang = lang;
+document.documentElement.dir = lang === 'en' ? 'ltr' : 'rtl';
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+var other = new URLSearchParams(location.search); if (lang === 'en') other.delete('lang'); else other.set('lang', 'en');
+var h = '<header><h1>📺 ' + esc(L.title) + '</h1><a href="?' + other.toString() + '">' + L.other + '</a></header>';
+if (!isPc) {
+  h += '<div class="card hl"><p>💻 ' + L.only + '</p><p class="dim">' + esc(L.only2) + '</p><p class="big">' + PAGE + '</p></div>';
+} else {
+  h += '<p class="dim">' + L.intro + '</p>';
+  L.steps.forEach(function (st) {
+    h += '<div class="card"><h2>' + st[0] + '</h2><ul>' + st[1].map(function (li) {
+      return '<li>' + li.replace('%COPY%', '<button data-copy="' + MOD + '">' + esc(L.copy) + '</button>') + '</li>';
+    }).join('') + '</ul></div>';
+  });
+  h += '<p class="small">' + L.remote + '</p><p class="small warn">' + L.trouble + '</p>';
+}
+document.getElementById('app').innerHTML = h;
+document.title = L.title;
+document.querySelectorAll('[data-copy]').forEach(function (b) {
+  b.onclick = function () {
+    var t = b.getAttribute('data-copy'), done = function () { b.textContent = L.copied; };
+    if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, function () {});
+  };
+});
+</script>
+</body>
+</html>
