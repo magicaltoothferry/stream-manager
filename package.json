@@ -1,0 +1,12 @@
+{
+  "name": "stream-manager",
+  "appName": "Stream Manager",
+  "version": "1.0.0",
+  "description": "Stream Manager for Samsung TVs — movies, series and live TV with Hebrew subtitles.",
+  "packageType": "mods",
+  "websiteURL": "https://hp.viplot.com/STREAM_MANAGEMENT/",
+  "main": "tizen/userScript.js",
+  "evaluateScriptOnDocumentStart": true,
+  "keys": ["MediaPlayPause", "MediaPlay", "MediaPause", "MediaStop", "MediaFastForward", "MediaRewind"],
+  "repository": "https://github.com/magicaltoothferry/stream-manager"
+}
